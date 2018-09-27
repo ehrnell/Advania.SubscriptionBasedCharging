@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ManagementPack SchemaVersion="2.0" ContentReadable="true" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Manifest>
+    <Identity>
+      <ID>AdvaniaOrganizationStructure</ID>
+      <Version>1.0.0.60</Version>
+    </Identity>
+    <Name>Advania.SubscriptionBasedCharging</Name>
+    <References>
+      <Reference Alias="SystemLib">
+        <ID>System.Library</ID>
+        <Version>7.5.8501.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+    </References>
+  </Manifest>
+  <TypeDefinitions>
+    <EntityTypes>
+      <ClassTypes>
+        <ClassType ID="Advania.Department" Base="SystemLib!System.ConfigItem" Accessibility="Public" Abstract="false" Hosted="false" Singleton="false">
+          <Property ID="DepartmentID" Key="true" Type="string" DefaultValue="Department{0}" AutoIncrement="true" />
+          <Property ID="DepartmentName" Key="false" Type="string" />
+          <Property ID="DepartmentDescription" Key="false" Type="string" />
+          <Property ID="DepartmentCode" Key="false" Type="int" />
+        </ClassType>
+        <ClassType ID="Advania.Division" Base="SystemLib!System.ConfigItem" Accessibility="Public" Abstract="false" Hosted="false" Singleton="false">
+          <Property ID="DivisionID" Key="true" Type="string" DefaultValue="Division{0}" AutoIncrement="true" />
+          <Property ID="DivisionName" Key="false" Type="string" />
+          <Property ID="DivisionDescription" Key="false" Type="string" />
+          <Property ID="DivisionCode" Key="false" Type="int" />
+        </ClassType>
+        <ClassType ID="Advania.Organization" Base="SystemLib!System.ConfigItem" Accessibility="Public" Abstract="false" Hosted="false" Singleton="false">
+          <Property ID="OrganizationID" Key="true" Type="string" DefaultValue="Organization{0}" AutoIncrement="true" />
+          <Property ID="OrganizationName" Key="false" Type="string" />
+          <Property ID="OrganizationDescription" Key="false" Type="string" />
+          <Property ID="OrganizationCode" Key="false" Type="int" />
+        </ClassType>
+        <ClassType ID="Advania.Unit" Base="SystemLib!System.ConfigItem" Accessibility="Public" Abstract="false" Hosted="false" Singleton="false">
+          <Property ID="UnitID" Key="true" Type="string" DefaultValue="Unit{0}" AutoIncrement="true" />
+          <Property ID="UnitName" Key="false" Type="string" />
+          <Property ID="UnitDescription" Key="false" Type="string" />
+          <Property ID="UnitCode" Key="false" Type="int" />
+        </ClassType>
+      </ClassTypes>
+      <RelationshipTypes>
+        <RelationshipType ID="Advania.rel.ContainsDepartment" Accessibility="Public" Base="SystemLib!System.Reference">
+          <Source ID="ContainsDepartment_Organization" MinCardinality="0" MaxCardinality="1" Type="Advania.Organization" />
+          <Target ID="ContainsDepartment_Department" MinCardinality="0" MaxCardinality="2147483647" Type="Advania.Department" />
+        </RelationshipType>
+      </RelationshipTypes>
+      <TypeProjections>
+        <TypeProjection ID="Advania.tp.organizations.full" Accessibility="Public" Type="Advania.Organization">
+          <Component Path="$Target/Path[Relationship='Advania.rel.ContainsDepartment']$" Alias="ContainsDepartment"></Component>
+        </TypeProjection>
+      </TypeProjections>
+    </EntityTypes>
+  </TypeDefinitions>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="Advania.Department">
+          <Name>Department Class</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Department" SubElementID="DepartmentID">
+          <Name>Department ID</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Department" SubElementID="DepartmentName">
+          <Name>Department Name</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Department" SubElementID="DepartmentDescription">
+          <Name>Department Description</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Department" SubElementID="DepartmentCode">
+          <Name>Department Code</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Organization">
+          <Name>Organization Class</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Organization" SubElementID="OrganizationID">
+          <Name>Organization ID</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Organization" SubElementID="OrganizationName">
+          <Name>Organization Name</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Organization" SubElementID="OrganizationDescription">
+          <Name>Organization Description</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Organization" SubElementID="OrganizationCode">
+          <Name>Organization Code</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Unit">
+          <Name>Unit Class</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Unit" SubElementID="UnitID">
+          <Name>Unit ID</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Unit" SubElementID="UnitName">
+          <Name>Unit Name</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Unit" SubElementID="UnitDescription">
+          <Name>Unit Description</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Unit" SubElementID="UnitCode">
+          <Name>Unit Code</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.rel.ContainsDepartment">
+          <Name>Organization Contains Department</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.tp.organizations.full">
+          <Name>Organization Type Projection (full)</Name>
+          <Description>Contains all relationships</Description>
+        </DisplayString>
+      </DisplayStrings>
+      <KnowledgeArticles></KnowledgeArticles>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPack>

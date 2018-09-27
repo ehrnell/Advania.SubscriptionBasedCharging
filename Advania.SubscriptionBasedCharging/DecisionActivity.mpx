@@ -1,0 +1,55 @@
+﻿<ManagementPackFragment SchemaVersion="SM2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDefinitions>
+    <EntityTypes>
+      <ClassTypes>
+        <ClassType ID="Advania.DecisionActivity" Base="ActivityLib!System.WorkItem.Activity" Accessibility="Public" Abstract="false" Hosted="false" Singleton="false">
+          <Property ID="DecisionActivityID" Key="true" Type="string" DefaultValue="Decision{0}" AutoIncrement="true"/>
+          <Property ID="SupportType" Key="false" Type="enum" EnumType="Advania.CI.Enum.Support.Type"/>
+          <Property ID="AssignedUser" Key="false" Type="guid" />
+        </ClassType>
+      </ClassTypes>
+    </EntityTypes>
+  </TypeDefinitions>
+  <!--Categories>
+    <Category ID="CompleteDecisionActivity" Target="CompleteDecisionActivityTask" Value="SAL!ServiceManager.ActivityManagement.ManualActivitiesFolderTasks" />
+    <Category ID="Category.1778914619c14f78bdb0fd0fa23b6b3b" Value="EnterpriseManagement!Microsoft.EnterpriseManagement.ServiceManager.ManagementPack">
+      <ManagementPackName>Advania.SubscriptionBasedCharging</ManagementPackName>
+      <ManagementPackVersion>1.0.0.0</ManagementPackVersion>
+      <ManagementPackPublicKeyToken>e66685990c39350a</ManagementPackPublicKeyToken>
+    </Category>
+  </Categories-->
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="Advania.DecisionActivity">
+          <Name>Decision Activity</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.DecisionActivity" SubElementID="DecisionActivityID">
+          <Name>Decision Activity ID</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.DecisionActivity" SubElementID="SupportType">
+          <Name>Support Type</Name>
+          <Description></Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+    <LanguagePack ID="SVE" IsDefault="false">
+      <DisplayStrings>
+        <DisplayString ElementID="Advania.DecisionActivity">
+          <Name>Decision Activity</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.DecisionActivity" SubElementID="DecisionActivityID">
+          <Name>Decision Activity ID</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.DecisionActivity" SubElementID="SupportType">
+          <Name>Support Type</Name>
+          <Description></Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>

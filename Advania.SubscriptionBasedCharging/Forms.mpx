@@ -1,0 +1,113 @@
+﻿<ManagementPackFragment SchemaVersion="SM2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Presentation>
+    <Forms>
+      <Form ID="OrganizationForm" Accessibility="Public" Target="Advania.OrganizationProjection" Assembly="Advania.SubscriptionBasedCharging.Forms" TypeName="Advania.SubscriptionBasedCharging.Forms.OrganizationTemplate">
+        <Category>Form</Category>
+        <Customization>
+        </Customization>
+      </Form>
+      <Form ID="DepartmentForm" Accessibility="Public" Target="Advania.DepartmentProjection" Assembly="Advania.SubscriptionBasedCharging.Forms" TypeName="Advania.SubscriptionBasedCharging.Forms.DepartmentTemplate">
+        <Category>Form</Category>
+        <Customization>
+        </Customization>
+      </Form>
+      <Form ID="DecisionActivityForm" Accessibility="Public" Target="Advania.DecisionActitvyProjection" Assembly="Advania.SubscriptionBasedCharging.Forms" TypeName="Advania.SubscriptionBasedCharging.Forms.DATemplate">
+        <Category>Form</Category>
+        <Customization>
+        </Customization>
+      </Form>
+      <Form ID="OrderIDForm" Accessibility="Public" Target="Advania.OrderIDOrdererProjection" Assembly="Advania.SubscriptionBasedCharging.Forms" TypeName="Advania.SubscriptionBasedCharging.Forms.OrderIDTemplate">
+        <Category>Form</Category>
+        <Customization>
+        </Customization>
+      </Form>
+      <Form ID="iPadForm" Accessibility="Public" Target="Advania.iPadProjection" Assembly="Advania.SubscriptionBasedCharging.Forms" TypeName="Advania.SubscriptionBasedCharging.Forms.iPadTemplate">
+        <Category>Form</Category>
+        <Customization>
+        </Customization>
+      </Form>
+      <Form ID="SubscriptionForm" Accessibility="Public" Target="Advania.SubscriptionsProjection" Assembly="Advania.SubscriptionBasedCharging.Forms" TypeName="Advania.SubscriptionBasedCharging.Forms.SubscriptionTemplate">
+        <Category>Form</Category>
+        <Customization>
+        </Customization>
+      </Form>
+      <Form ID="MobileForm" Accessibility="Public" Target="Advania.MobileProjection" Assembly="Advania.SubscriptionBasedCharging.Forms" TypeName="Advania.SubscriptionBasedCharging.Forms.MobileTemplate">
+        <Category>Form</Category>
+        <Customization>
+        </Customization>
+      </Form>
+      <!--Form ID="CustomForm_f423faa1_47d7_4050_84a2_1a97349e8ac8" Accessibility="Public" Target="CustomForm_f423faa1_47d7_4050_84a2_1a97349e8ac8_TypeProjection" BaseForm="SCL!ComputerForm" TypeName="Microsoft.EnterpriseManagement.ServiceManager.ConfigurationManagement.Forms.ComputerForm"-->
+      <Form ID="ComputerForm" BaseForm="SCL!ComputerForm" Accessibility="Public" Target="Advania.Computer.ProjectionType" TypeName="Microsoft.EnterpriseManagement.ServiceManager.ConfigurationManagement.Forms.ComputerForm">
+        <Category>Form</Category>
+        <Customization>
+          <AddControl Parent="Panel_4" Assembly="PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="System.Windows.Controls.Grid" Left="0" Top="0" Right="0" Bottom="0" Row="0" Column="0" />
+          <AddControl Parent="Grid_1" Assembly="PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="System.Windows.Controls.Expander" Left="0" Top="0" Right="0" Bottom="0" Row="0" Column="0" />
+          <AddControl Parent="Expander_1" Assembly="PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="System.Windows.Controls.Grid" Left="0" Top="0" Right="0" Bottom="0" Row="0" Column="0" />
+          <PropertyChange Object="Expander_1" Property="Header">
+            <NewValue>test</NewValue>
+          </PropertyChange>
+          <PropertyChange Object="Expander_1" Property="Height">
+            <NewValue>Auto</NewValue>
+          </PropertyChange>
+          <PropertyChange Object="Expander_1" Property="Width">
+            <NewValue>Auto</NewValue>
+          </PropertyChange>
+          <AddControl Parent="Expander_1" Assembly="PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="System.Windows.Controls.Grid" Left="0" Top="0" Right="0" Bottom="0" Row="0" Column="0" />
+          <PropertyChange Object="Grid_1" Property="Width">
+            <NewValue>Auto</NewValue>
+          </PropertyChange>
+          <PropertyChange Object="Grid_1" Property="Height">
+            <NewValue>Auto</NewValue>
+          </PropertyChange>
+          <PropertyChange Object="Grid_2" Property="Width">
+            <NewValue>Auto</NewValue>
+          </PropertyChange>
+          <PropertyChange Object="Grid_2" Property="Height">
+            <NewValue>Auto</NewValue>
+          </PropertyChange>
+          <PropertyChange Object="Grid_1" Property="VerticalAlignment">
+            <NewValue>Bottom</NewValue>
+          </PropertyChange>
+          <PropertyChange Object="Grid_1" Property="Margin">
+            <NewValue>0,0,0,0</NewValue>
+          </PropertyChange>
+          <!--AddControl Parent="GeneralTab/Index:1/Index:0/Index:11/Index:1" Assembly="Advania.SubscriptionBasedCharging.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e66685990c39350a" Type="Advania.SubscriptionBasedCharging.Forms.ComputerSubscriptions" Left="0" Top="50" Right="0" Bottom="0" Row="0" Column="1" /-->
+          <AddControl Parent="GeneralTab/Index:1/Index:0/Index:0/Index:11/Index:1" Assembly="Advania.SubscriptionBasedCharging.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e66685990c39350a" Type="Advania.SubscriptionBasedCharging.Forms.ComputerSubscriptions" Left="0" Top="50" Right="0" Bottom="0" Row="0" Column="1" />
+          <!--AddControl Parent="Expander_4" Assembly="Advania.SubscriptionBasedCharging.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e66685990c39350a" Type="Advania.SubscriptionBasedCharging.Forms.ComputerSubscriptions" Left="1" Top="1" Right="1" Bottom="0" Row="0" Column="0" /-->
+          <PropertyChange Object="ComputerSubscriptions_1" Property="Width">
+            <NewValue>Auto</NewValue>
+          </PropertyChange>
+          <PropertyChange Object="ComputerSubscriptions_1" Property="Height">
+            <NewValue>Auto</NewValue>
+          </PropertyChange>
+          <PropertyChange Object="ComputerSubscriptions_1" Property="VerticalAlignment">
+            <NewValue>Bottom</NewValue>
+          </PropertyChange>
+          <PropertyChange Object="ComputerSubscriptions_1" Property="Margin">
+            <!--NewValue>55,0,0,73</NewValue-->
+            <NewValue>0,0,0,73</NewValue>
+          </PropertyChange>
+          <!--Resize Type="BottomLeft" X="264" Y="20">
+            <Element Name="ComputerSubscriptions_1" />
+          </Resize-->
+          <!--PropertyChange Object="ComputerSubscription_1" Property="Margin">
+            <NewValue>0,85,0,93</NewValue>
+          </PropertyChange-->
+          <PropertyChange Object="ComputerSubscription_1" Property="VerticalAlignment">
+            <NewValue>Stretch</NewValue>
+          </PropertyChange>
+          <PropertyChange Object="ComputerSubscription_1" Property="Height">
+            <NewValue>Auto</NewValue>
+          </PropertyChange>
+          <PropertyChange Object="GeneralTab/Index:1/Index:0/Index:0/Index:11/Index:1" Property="Height">
+            <NewValue>300</NewValue>
+          </PropertyChange>
+        </Customization>
+      </Form>
+          
+    </Forms>
+    </Presentation>
+  <Resources>
+    <Assembly ID="Advania.SubscriptionBasedCharging.Forms" Accessibility="Public" FileName="Advania.SubscriptionBasedCharging.Forms.dll" HasNullStream="false" QualifiedName="Advania.SubscriptionBasedCharging.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e66685990c39350a" />
+  </Resources>
+</ManagementPackFragment>

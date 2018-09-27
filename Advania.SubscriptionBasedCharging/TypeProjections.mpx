@@ -1,0 +1,278 @@
+﻿<ManagementPackFragment SchemaVersion="SM2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDefinitions>
+    <EntityTypes>
+      <ClassTypes>
+        <ClassType ID="Advania.MyConfigItem" Accessibility="Public" Abstract="false" Base="SystemLib!System.ConfigItem" Hosted="false" Singleton="false" Extension="false">
+          <Property ID="PrincipalName" Type="string" AutoIncrement="false" Key="true" CaseSensitive="false" MaxLength="256" MinLength="0" Required="false" Scale="0" />
+        </ClassType>
+        <ClassType ID="MyWorkItem" Accessibility="Public" Abstract="false" Base="WorkItem!System.WorkItem" Hosted="false" Singleton="false" Extension="false" />
+      </ClassTypes>
+      <TypeProjections>
+        <TypeProjection ID="Advania.SubscriptionsProjection" Accessibility="Public" Type="Advania.Subscription">
+          <Component Path="$Target/Path[Relationship='Advania.SubscribedService']$" Alias="SubscribedService" />
+          <Component Path="$Target/Path[Relationship='Advania.SubscriptionPrice']$" Alias="SubscriptionPricelist" />
+          <Component Path="$Target/Path[Relationship='Advania.SubscriptionOrderID']$" Alias="SubscriptionOrderID" />
+          <Component Path="$Target/Path[Relationship='Advania.SubscribedByOrganization']$" Alias="SubscriptionOrganization" />
+          <Component Path="$Target/Path[Relationship='Advania.SubscribedByDepartment']$" Alias="SubscriptionDepartment" />
+          <Component Path="$Context/Path[Relationship='Advania.SubscribedByOrganization']$" Alias="SubscribedByOrganization" />
+          <Component Path="$Context/Path[Relationship='Advania.SubscribedByDepartment']$" Alias="SubscribedByDepartment" />
+          <Component Path="$Context/Path[Relationship='Advania.SubscriptionContainsConfigItem']$" Alias="SubscriptionContainsConfigItem" />
+          <Component Path="$Target/Path[Relationship='Advania.SubscribedByUnit']$" Alias="SubscriptionUnits" />
+          <Component Path="$Target/Path[Relationship='Advania.SubscribedByOtherEk']$" Alias="SubscriptionOtherEk" />
+          <Component Path="$Context/Path[Relationship='SystemLib!System.ConfigItemOwnedByUser']$" Alias="Custodian" />
+          <Component Path="$Context/Path[Relationship='SystemLib!System.ConfigItemRelatesToConfigItem']$" Alias="RelatedConfigItem" />
+          <Component Path="$Context/Path[Relationship='WorkItem!System.WorkItemRelatesToConfigItem' SeedRole='Target']$" Alias="ImpactedWorkItem" />
+          <Component Path="$Context/Path[Relationship='WorkItem!System.WorkItemAboutConfigItem' SeedRole='Target']$" Alias="RelatedWorkItem" />
+          <Component Path="$Context/Path[Relationship='SupportingItem!System.ConfigItemHasFileAttachment']$" Alias="FileAttachment" />
+          <Component Path="$Context/Path[Relationship='SystemLib!System.ConfigItemRelatesToConfigItem']$" Alias="RelatedConfigItem" />
+          <Component Path="$Context/Path[Relationship='SystemLib!System.ConfigItemRelatesToConfigItem' SeedRole='Target']$" Alias="RelatedConfigItemSource" />
+          <Component Path="$Context/Path[Relationship='CoreKnowledge!System.EntityLinksToKnowledgeDocument']$" Alias="RelatedKnowledgeArticles" />
+        </TypeProjection>
+        <TypeProjection ID="Advania.OrderIDOrdererProjection" Accessibility="Public" Type="Advania.OrderID">
+          <Component Path="$Target/Path[Relationship='Advania.OrderIDAuthorizedOrderer']$" Alias="AuthorizedOrderer" />
+          <Component Path="$Context/Path[Relationship='Advania.OrganizationContainsOrderID' SeedRole='Target']$" Alias="OrderIDBelongsToOrganization" />
+          <!--Component Path="$Context/Path[Relationship='Advania.OrganizationContainsOrderID']$" Alias="OrderIDBelongsToOrganization" /-->
+        </TypeProjection>
+        <TypeProjection ID="Advania.PricelistProjection" Accessibility="Public" Type="Advania.Subscription">
+          <Component Path="$Target/Path[Relationship='Advania.SubscriptionPrice']$" Alias="SubscriptionPricelist" />
+        </TypeProjection>
+        <TypeProjection ID="Advania.OrderIDProjection" Accessibility="Public" Type="Advania.Subscription">
+          <Component Path="$Target/Path[Relationship='Advania.SubscriptionOrderID']$" Alias="SubscriptionOrderID" />
+        </TypeProjection>
+        <TypeProjection ID="Advania.OrderIDProj" Accessibility="Public" Type="Advania.OrderID">
+          <Component Path="$Context/Path[Relationship='Advania.OrganizationContainsOrderID' SeedRole='Target']$" Alias="OrderIDBelongsToOrganization" />
+        </TypeProjection>
+        <TypeProjection ID="Advania.OrganizationSubscriptionProjection" Accessibility="Public" Type="Advania.Subscription">
+          <!--Component Path="$Target/Path[Relationship='Advania.SubscribedByOrganization']$" Alias="SubscribedByOrganization" /-->
+        </TypeProjection>
+        <TypeProjection ID="Advania.DivisionSubscriptionProjection" Accessibility="Public" Type="Advania.Subscription">
+          <Component Path="$Target/Path[Relationship='Advania.SubscribedByDivision']$" Alias="SubscriptionDivision" />
+        </TypeProjection>
+        <TypeProjection ID="Advania.UnitSubscriptionProjection" Accessibility="Public" Type="Advania.Subscription">
+          <Component Path="$Target/Path[Relationship='Advania.SubscribedByUnit']$" Alias="SubscriptionUnit" />
+        </TypeProjection>
+        <TypeProjection ID="Advania.OtherEkSubscriptionProjection" Accessibility="Public" Type="Advania.Subscription">
+          <Component Path="$Target/Path[Relationship='Advania.SubscribedByOtherEk']$" Alias="SubscriptionOtherEk" />
+        </TypeProjection>
+        <TypeProjection ID="Advania.SubscriptionCIProjection" Accessibility="Public" Type="Advania.Subscription">
+          <Component Path="$Target/Path[Relationship='Advania.SubscriptionContainsConfigItem']$" Alias="SubscriptionContainsConfigItem" />
+        </TypeProjection>
+        <TypeProjection ID="Advania.SubscriptionChargeProjection" Accessibility="Public" Type="Advania.Charge">
+          <Component Path="$Target/Path[Relationship='Advania.ChargedSubscription']$" Alias="SubscriptionCharge" />
+        </TypeProjection>
+        <TypeProjection ID="Advania.OrganizationContainsOrderIDProjection" Accessibility="Public" Type="Advania.Organization">
+          <Component Path="$Target/Path[Relationship='Advania.OrganizationContainsOrderID']$" Alias="OrganizationContainsOrderID" />
+        </TypeProjection>
+        <TypeProjection ID="Advania.OrganizationProjection" Accessibility="Public" Type="Advania.Organization">
+          <Component Path="$Context/Path[Relationship='Advania.OrganizationContainsDepartment']$" Alias="OrganizationContainsDepartment" />
+          <Component Path="$Context/Path[Relationship='Advania.OrganizationContainsOrderID']$" Alias="OrganizationContainsOrderID" />
+          <Component Path="$Context/Path[Relationship='Advania.SubscribedByOrganization' SeedRole='Target']$" Alias="SubscriptionBelongsToOrganization" />
+          
+        </TypeProjection>
+        <TypeProjection ID="Advania.DepartmentProjection" Accessibility="Public" Type="Advania.Department">
+          <Component Path="$Context/Path[Relationship='Advania.OrganizationContainsDepartment' SeedRole='Target']$" Alias="DepartmentBelongsToOrganization" />
+          <!--Component Path="$Target/Path[Relationship='Advania.SubscriptionsForDepartment']$" Alias="DepartmentHasSubscription" /-->
+          <Component Path="$Context/Path[Relationship='Advania.SubscribedByDepartment' SeedRole='Target']$" Alias="SubscriptionBelongsToDepartment" />
+        </TypeProjection>
+        <TypeProjection ID="Advania.DivisionsProjection" Accessibility="Public" Type="Advania.Department">
+          <Component Path="$Context/Path[Relationship='Advania.DepartmentContainsDivision']$" Alias="ContainsDivision" />
+          <Component Path="$Context/Path[Relationship='Advania.DepartmentBelongsToOrganization']$" Alias="BelongsToOrganization" />
+        </TypeProjection>
+        <TypeProjection ID="Advania.UnitProjection" Accessibility="Public" Type="Advania.Division">
+          <Component Path="$Target/Path[Relationship='Advania.DivisionContainsUnit']$" Alias="ContainsUnit" />
+        </TypeProjection>
+        <TypeProjection ID="Advania.OtherEkProjection" Accessibility="Public" Type="Advania.Unit">
+          <Component Path="$Target/Path[Relationship='Advania.UnitContainsOtherEk']$" Alias="ContainsOtherEk" />
+        </TypeProjection>
+        <TypeProjection ID="Advania.ExternalChargeProjection" Accessibility="Public" Type="Advania.ChargeExternal">
+          <Component Path="$Target/Path[Relationship='Advania.ChargedExternal']$" Alias="ExternalCharge" />
+        </TypeProjection>
+        <TypeProjection ID="Advania.ExternalChargeOrderIDProjection" Accessibility="Public" Type="Advania.ChargeExternal">
+          <Component Path="$Target/Path[Relationship='Advania.ChargedExternalOrderID']$" Alias="ExternalChargeOrderID" />
+        </TypeProjection>
+        <TypeProjection ID="Advania.DecisionActitvyProjection" Accessibility="Public" Type="Advania.DecisionActivity">
+          <Component Path="$Context/Path[Relationship='ActivityLib!System.WorkItemContainsActivity' SeedRole='Target']$" Alias="ParentWorkItem" />
+          <Component Path="$Context/Path[Relationship='WorkItem!System.WorkItemCreatedByUser']$" Alias="ActivityCreatedBy" />
+          <Component Path="$Context/Path[Relationship='WorkItem!System.WorkItemAssignedToUser']$" Alias="ActivityAssignedTo" />
+          <Component Path="$Context/Path[Relationship='WorkItem!System.WorkItemAboutConfigItem']$" Alias="ActivityAboutConfigItem" />
+          <!--Component Path="$Target/Path[Relationship='ActivityLib!System.WorkItemContainsActivity' SeedRole='Target' TypeConstraint='WorkItem!System.WorkItem']/Path[Relationship='WorkItem!System.WorkItemCreatedBy' TypeConstraint='SystemLib!System.Domain.User']$" Alias="ParentWorkItem2" /-->
+
+        <!--$Context/Path[Relationship='CustomSystem_WorkItem_Activity_Library!System.WorkItemContainsActivity' SeedRole='Target' TypeConstraint='CustomSystem_WorkItem_Library!System.WorkItem']/Path[Relationship='CustomSystem_WorkItem_Library!System.WorkItemAffectedUser' TypeConstraint='CustomSystem_Library!System.Domain.User']/Property[Type='CustomSystem_Library!System.Domain.User']/DisplayName$-->
+        
+        </TypeProjection>
+        <TypeProjection ID="System.WorkItem.ActivityServiceRequestViewProjection" Accessibility="Public" Type="ActivityLib!System.WorkItem.Activity">
+          <Component Alias="ActivityAssignedTo" Path="$Target/Path[Relationship='WorkItem!System.WorkItemAssignedToUser']$" />
+          <Component Alias="ParentWorkItem" Path="$Target/Path[Relationship='ActivityLib!System.WorkItemContainsActivity' SeedRole='Target' TypeConstraint='ServiceRequest!System.WorkItem.ServiceRequest']$" />
+          <Component Path="$Target/Path[Relationship='WorkItem!System.WorkItemAffectedUser' SeedRole='Source' TypeConstraint='SystemLib!System.User']$" Alias="AffectedUser" />
+        </TypeProjection>
+
+        <TypeProjection ID="Advania.ServiceRequestAndActivityViewProjection" Accessibility="Public" Type="ActivityLib!System.WorkItem.Activity.ManualActivity">
+          <Component Path="$Target/Path[Relationship='ActivityLib!System.WorkItemContainsActivity']$" Alias="Activity"/>
+          <Component Path="$Target/Path[Relationship='ActivityLib!System.WorkItemContainsActivity' SeedRole='Target']$" Alias="ParentWorkItem">
+          <Component Path="$Target/Path[Relationship='WorkItem!System.WorkItemAffectedUser']$" Alias="AffectedUser" />
+        </Component>
+        </TypeProjection>
+        <TypeProjection ID="Advania.iPadProjection" Accessibility="Public" Type="Advania.Ipad">
+          <Component Path="$Context/Path[Relationship='SystemLib!System.ConfigItemOwnedByUser']$" Alias="Custodian" />
+          <Component Path="$Context/Path[Relationship='SystemLib!System.ConfigItemRelatesToConfigItem']$" Alias="RelatedConfigItem" />
+          <Component Path="$Context/Path[Relationship='WorkItem!System.WorkItemRelatesToConfigItem' SeedRole='Target']$" Alias="ImpactedWorkItem" />
+          <Component Path="$Context/Path[Relationship='WorkItem!System.WorkItemAboutConfigItem' SeedRole='Target']$" Alias="RelatedWorkItem" />
+          <Component Path="$Context/Path[Relationship='SupportingItem!System.ConfigItemHasFileAttachment']$" Alias="FileAttachment" />
+          <Component Path="$Context/Path[Relationship='SystemLib!System.ConfigItemRelatesToConfigItem']$" Alias="RelatedConfigItem" />
+          <Component Path="$Context/Path[Relationship='SystemLib!System.ConfigItemRelatesToConfigItem' SeedRole='Target']$" Alias="RelatedConfigItemSource" />
+          <Component Path="$Context/Path[Relationship='CoreKnowledge!System.EntityLinksToKnowledgeDocument']$" Alias="RelatedKnowledgeArticles" />
+          <!-- 161111 - Component Path="$Context/Path[Relationship='Advania.ConfigItemBelongsToSubscription']$" Alias="ConfigItemBelongsToSubscription" /-->
+          <Component Path="$Context/Path[Relationship='Advania.SubscriptionContainsConfigItem' SeedRole='Target']$" Alias="ConfigItemBelongsToSubscription" />
+        </TypeProjection>
+        <TypeProjection ID="Advania.MobileProjection" Accessibility="Public" Type="Advania.Mobile">
+          <Component Path="$Context/Path[Relationship='SystemLib!System.ConfigItemOwnedByUser']$" Alias="MobileCustodian" />
+          <Component Path="$Context/Path[Relationship='SystemLib!System.ConfigItemRelatesToConfigItem']$" Alias="RelatedConfigItem" />
+          <Component Path="$Context/Path[Relationship='WorkItem!System.WorkItemRelatesToConfigItem' SeedRole='Target']$" Alias="ImpactedWorkItem" />
+          <Component Path="$Context/Path[Relationship='WorkItem!System.WorkItemAboutConfigItem' SeedRole='Target']$" Alias="RelatedWorkItem" />
+          <Component Path="$Context/Path[Relationship='SupportingItem!System.ConfigItemHasFileAttachment']$" Alias="FileAttachment" />
+          <Component Path="$Context/Path[Relationship='SystemLib!System.ConfigItemRelatesToConfigItem']$" Alias="RelatedConfigItem" />
+          <Component Path="$Context/Path[Relationship='SystemLib!System.ConfigItemRelatesToConfigItem' SeedRole='Target']$" Alias="RelatedConfigItemSource" />
+          <Component Path="$Context/Path[Relationship='CoreKnowledge!System.EntityLinksToKnowledgeDocument']$" Alias="RelatedKnowledgeArticles" />
+          <!-- 161111 - Component Path="$Context/Path[Relationship='Advania.ConfigItemBelongsToSubscription']$" Alias="ConfigItemBelongsToSubscription" /-->
+          <Component Path="$Context/Path[Relationship='Advania.SubscriptionContainsConfigItem' SeedRole='Target']$" Alias="ConfigItemBelongsToSubscription" />
+        </TypeProjection>
+        <TypeProjection ID="Advania.Computer.ProjectionType" Accessibility="Public" Type="Windows!Microsoft.Windows.Computer">
+          <Component Alias="PhysicalComputer" Path="$Context/Path[Relationship='ConfigurationManager!Microsoft.SystemCenter.ConfigurationManager.DeployedComputerRunsWindowsComputer' SeedRole='Target']$" />
+          <Component Alias="OperatingSystem" Path="$Context/Path[Relationship='Windows!Microsoft.Windows.ComputerHostsOperatingSystem']$" />
+          <Component Alias="NetworkAdapter" Path="$Context/Path[Relationship='Windows!Microsoft.Windows.ComputerHostsLogicalDevice' TypeConstraint='Peripherals!Microsoft.Windows.Peripheral.NetworkAdapter']$" />
+          <Component Alias="Processor" Path="$Context/Path[Relationship='Windows!Microsoft.Windows.ComputerHostsLogicalDevice' TypeConstraint='Peripherals!Microsoft.Windows.Peripheral.Processor']$" />
+          <Component Alias="PhysicalDisk" Path="$Context/Path[Relationship='Windows!Microsoft.Windows.ComputerHostsLogicalDevice' TypeConstraint='Peripherals!Microsoft.Windows.Peripheral.PhysicalDisk']$" />
+          <Component Alias="LogicalDisk" Path="$Context/Path[Relationship='Windows!Microsoft.Windows.ComputerHostsLogicalDevice' TypeConstraint='Peripherals!Microsoft.Windows.Peripheral.LogicalDisk']$" />
+          <Component Alias="PrimaryUser" Path="$Context/Path[Relationship='SystemLib!System.ComputerPrimaryUser']$" />
+          <Component Alias="Custodian" Path="$Context/Path[Relationship='SystemLib!System.ConfigItemOwnedByUser']$" />
+          <!--Related Items-->
+          <Component Alias="ImpactedWorkItem" Path="$Context/Path[Relationship='WorkItem!System.WorkItemRelatesToConfigItem' SeedRole='Target']$" />
+          <Component Alias="RelatedWorkItem" Path="$Context/Path[Relationship='WorkItem!System.WorkItemAboutConfigItem' SeedRole='Target']$" />
+          <Component Alias="FileAttachment" Path="$Context/Path[Relationship='SupportingItem!System.ConfigItemHasFileAttachment']$" />
+          <Component Alias="RelatedConfigItem" Path="$Context/Path[Relationship='SystemLib!System.ConfigItemRelatesToConfigItem']$" />
+          <Component Alias="RelatedConfigItemSource" Path="$Context/Path[Relationship='SystemLib!System.ConfigItemRelatesToConfigItem' SeedRole='Target']$" />
+          <Component Alias="RelatedKnowledgeArticles" Path="$Context/Path[Relationship='CoreKnowledge!System.EntityLinksToKnowledgeDocument']$" />
+          <Component Path="$Context/Path[Relationship='Advania.SubscriptionContainsConfigItem' SeedRole='Target']$" Alias="ConfigItemBelongsToSubscription" />         
+        </TypeProjection>
+      </TypeProjections>
+    </EntityTypes>
+  </TypeDefinitions>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+          <DisplayString ElementID="Advania.SubscriptionsProjection">
+          <Name>Subscribed Services</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.PricelistProjection">
+          <Name>Pricelist for Subscription</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.OrderIDProjection">
+          <Name>OrderID for Subscription</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.OrganizationSubscriptionProjection">
+          <Name>Subscriptions for Organization</Name>
+        </DisplayString>
+        <!--DisplayString ElementID="Advania.DepartmentSubscriptionProjection">
+          <Name>Subscriptions for Department</Name>
+        </DisplayString-->
+          <DisplayString ElementID="Advania.DivisionSubscriptionProjection">
+          <Name>Subscriptions for Division</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.UnitSubscriptionProjection">
+          <Name>Subscriptions for Unit</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.OtherEkSubscriptionProjection">
+          <Name>Subscriptions for OtherEk</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.SubscriptionCIProjection">
+          <Name>Subscription contains Configuration Item</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.SubscriptionChargeProjection">
+          <Name>Charged Subscriptions</Name>
+        </DisplayString>
+          <DisplayString ElementID="Advania.OrganizationContainsOrderIDProjection">
+          <Name>OrderID for Organization</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.OrderIDOrdererProjection">
+          <Name>Users OrderID</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.DepartmentProjection">
+          <Name>Department for Organization</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.DivisionsProjection">
+          <Name>Department Contains Division</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.UnitProjection">
+          <Name>Division Contains Unit</Name>
+        </DisplayString>
+        <!--DisplayString ElementID="Advania.OtherEkProjection">
+          <Name>Unit Contains OtherEk</Name>
+        </DisplayString-->
+          <DisplayString ElementID="Advania.ExternalChargeProjection">
+          <Name>Charged External</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.ExternalChargeOrderIDProjection">
+          <Name>Charged External for OrderID</Name>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+      <LanguagePack ID="SVE" IsDefault="false">
+      <DisplayStrings>
+          <DisplayString ElementID="Advania.SubscriptionsProjection">
+          <Name>Prenumererad tjänst</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.PricelistProjection">
+          <Name>Prislista för prenumeration</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.OrderIDProjection">
+          <Name>OrderID för prenumeration</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.OrganizationSubscriptionProjection">
+          <Name>Ansvarets prenumerationer</Name>
+        </DisplayString>
+        <!--DisplayString ElementID="Advania.DepartmentSubscriptionProjection">
+          <Name>Verksamhetens prenumerationer</Name>
+        </DisplayString-->
+          <DisplayString ElementID="Advania.DivisionSubscriptionProjection">
+          <Name>Avdelningens prenumerationer</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.UnitSubscriptionProjection">
+          <Name>Enhetens prenumerationer</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.OtherEkSubscriptionProjection">
+          <Name>Prenumerationer övrigt ek</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.SubscriptionCIProjection">
+          <Name>Konfiurationsobjekt i prenumerationen</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.SubscriptionChargeProjection">
+          <Name>Debiterade prenumerationer</Name>
+        </DisplayString>
+          <DisplayString ElementID="Advania.OrganizationContainsOrderIDProjection">
+          <Name>OrderID per ansvar</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.OrderIDOrdererProjection">
+          <Name>Användares OrderID</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.DepartmentProjection">
+          <Name>Ansvarets verksamheter</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.DivisionsProjection">
+          <Name>Verksamhet innehåller division</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.UnitProjection">
+          <Name>Division innehåller enhet</Name>
+        </DisplayString>
+        <!--DisplayString ElementID="Advania.OtherEkProjection">
+          <Name>Unit Contains OtherEk</Name>
+        </DisplayString-->
+          <DisplayString ElementID="Advania.ExternalChargeProjection">
+          <Name>Extern debitering</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.ExternalChargeOrderIDProjection">
+          <Name>Extern för OrderID</Name>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>

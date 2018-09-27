@@ -1,0 +1,89 @@
+﻿<ManagementPackFragment SchemaVersion="SM2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDefinitions>
+    <EntityTypes>
+      <EnumerationTypes>
+        <EnumerationValue Accessibility="Public" ID="Advania.CI.Enum.Subscription.Type"/>
+        <EnumerationValue Accessibility="Public" ID="Advania.CI.Enum.Subscription.Type.OneTime" Ordinal="1" Parent="Advania.CI.Enum.Subscription.Type"/>
+        <EnumerationValue Accessibility="Public" ID="Advania.CI.Enum.Subscription.Type.Monthly" Ordinal="2" Parent="Advania.CI.Enum.Subscription.Type"/>
+        <EnumerationValue Accessibility="Public" ID="Advania.CI.Enum.Subscription.Type.Quarterly" Ordinal="3" Parent="Advania.CI.Enum.Subscription.Type"/>
+        <EnumerationValue Accessibility="Public" ID="Advania.CI.Enum.Subscription.Type.HalfYearly" Ordinal="4" Parent="Advania.CI.Enum.Subscription.Type"/>
+        <EnumerationValue Accessibility="Public" ID="Advania.CI.Enum.Subscription.Type.Yearly" Ordinal="5" Parent="Advania.CI.Enum.Subscription.Type"/>
+        <EnumerationValue Accessibility="Public" ID="Advania.CI.Enum.Support.Type"/>
+        <EnumerationValue Accessibility="Public" ID="Advania.CI.Enum.Support.Type.Admin" Ordinal="1" Parent="Advania.CI.Enum.Support.Type"/>
+        <EnumerationValue Accessibility="Public" ID="Advania.CI.Enum.Support.Type.Pedagog" Ordinal="2" Parent="Advania.CI.Enum.Support.Type"/>
+        <EnumerationValue Accessibility="Public" ID="Advania.CI.Enum.Support.Type.Publik" Ordinal="3" Parent="Advania.CI.Enum.Support.Type"/>
+        <EnumerationValue Accessibility="Public" ID="Advania.CI.Enum.Support.Type.Elev" Ordinal="4" Parent="Advania.CI.Enum.Support.Type"/>
+      </EnumerationTypes>
+    </EntityTypes>
+  </TypeDefinitions>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="Advania.CI.Enum.Subscription.Type">
+          <Name>Subscription Type</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.CI.Enum.Subscription.Type.OneTime">
+          <Name>One Time</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.CI.Enum.Subscription.Type.Monthly">
+          <Name>Monthly</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.CI.Enum.Subscription.Type.Quarterly">
+          <Name>Quarterly</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.CI.Enum.Subscription.Type.HalfYearly">
+          <Name>Half-Yearly</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.CI.Enum.Subscription.Type.Yearly">
+          <Name>Yearly</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.CI.Enum.Support.Type.Admin">
+          <Name>Administrativ Dator</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.CI.Enum.Support.Type.Pedagog">
+          <Name>Skolpedagoger</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.CI.Enum.Support.Type.Publik">
+          <Name>Publik dator</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.CI.Enum.Support.Type.Elev">
+          <Name>Elev</Name>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+    <LanguagePack ID="SVE" IsDefault="false">
+      <DisplayStrings>
+        <DisplayString ElementID="Advania.CI.Enum.Subscription.Type">
+          <Name>Prenumerationstyp</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.CI.Enum.Subscription.Type.OneTime">
+          <Name>En gång</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.CI.Enum.Subscription.Type.Monthly">
+          <Name>Månad</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.CI.Enum.Subscription.Type.Quarterly">
+          <Name>Kvartal</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.CI.Enum.Subscription.Type.HalfYearly">
+          <Name>Halvår</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.CI.Enum.Subscription.Type.Yearly">
+          <Name>År</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.CI.Enum.Support.Type.Admin">
+          <Name>Administrativ Dator</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.CI.Enum.Support.Type.Pedagog">
+          <Name>Skolpedagoger</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.CI.Enum.Support.Type.Publik">
+          <Name>Publik dator</Name>
+        </DisplayString>
+        <DisplayString ElementID="Advania.CI.Enum.Support.Type.Elev">
+          <Name>Elev</Name>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>

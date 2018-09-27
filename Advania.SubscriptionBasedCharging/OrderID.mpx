@@ -1,0 +1,35 @@
+﻿<ManagementPackFragment SchemaVersion="SM2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDefinitions>
+    <EntityTypes>
+      <ClassTypes>
+        <ClassType ID="Advania.OrderID" Base="SystemLib!System.ConfigItem" Accessibility="Public" Abstract="false" Hosted="false" Singleton="false">
+          <Property ID="OrderIDID" Key="true" Type="string" DefaultValue="OrderID{0}" AutoIncrement="true"/>
+          <Property ID="OrderIDDescription" Key="false" Type="string"/>
+          <Property ID="OrderIDCode" Key="false" Type="int"/>
+        </ClassType>
+      </ClassTypes>
+    </EntityTypes>
+  </TypeDefinitions>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="Advania.OrderID">
+          <Name>OrderID Class</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.OrderID" SubElementID="OrderIDID">
+          <Name>OrderID ID</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.OrderID" SubElementID="OrderIDDescription">
+          <Name>OrderID Description</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.OrderID" SubElementID="OrderIDCode">
+          <Name>OrderID Code</Name>
+          <Description></Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>

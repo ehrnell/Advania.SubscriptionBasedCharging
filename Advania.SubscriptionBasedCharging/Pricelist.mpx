@@ -1,0 +1,45 @@
+﻿<ManagementPackFragment SchemaVersion="SM2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDefinitions>
+    <EntityTypes>
+      <ClassTypes>
+        <ClassType ID="Advania.Pricelist" Base="SystemLib!System.ConfigItem" Accessibility="Public" Abstract="false" Hosted="false" Singleton="false">
+          <Property ID="PricelistID" Key="true" Type="string" DefaultValue="Pricelist{0}" AutoIncrement="true"/>
+          <Property ID="PricelistName" Key="false" Type="string"/>
+          <Property ID="PricelistCost" Key="false" Type="int"/>
+          <Property ID="PricelistStartDate" Key="false" Type="datetime"/>
+          <Property ID="PricelistSubscriptionType" Key="false" Type="enum" EnumType="Advania.CI.Enum.Subscription.Type"/>
+        </ClassType>
+      </ClassTypes>
+    </EntityTypes>
+  </TypeDefinitions>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="Advania.Pricelist">
+          <Name>Pricelist</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Pricelist" SubElementID="PricelistID">
+          <Name>Pricelist ID</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Pricelist" SubElementID="PricelistName">
+          <Name>Pricelist Name</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Pricelist" SubElementID="PricelistCost">
+          <Name>Pricelist Cost</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Pricelist" SubElementID="PricelistStartDate">
+          <Name>Pricelist StartDate</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Pricelist" SubElementID="PricelistSubscriptionType">
+          <Name>Pricelist Subscription Type</Name>
+          <Description></Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>

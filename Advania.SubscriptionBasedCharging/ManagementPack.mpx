@@ -1,0 +1,20 @@
+﻿<ManagementPackFragment SchemaVersion="SM2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="Advania.SubscriptionBasedCharging">
+          <Name>Advania.SubscriptionBasedCharging</Name>
+          <Description>Advania Subscription based Charging</Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+    <LanguagePack ID="SVE" IsDefault="false">
+      <DisplayStrings>
+        <DisplayString ElementID="Advania.SubscriptionBasedCharging">
+          <Name>Advania.SubscriptionBasedCharging</Name>
+          <Description>Advania prenumerationsbaserad debitering</Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>    
+  </LanguagePacks>
+</ManagementPackFragment>

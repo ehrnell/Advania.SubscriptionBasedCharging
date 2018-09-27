@@ -1,0 +1,20 @@
+﻿<ManagementPackFragment SchemaVersion="SM2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Warehouse>
+    <Dimensions>
+      <Dimension ID="SubscriptionDim" Accessibility="Public" InferredDimension="true" Target="Advania.Subscription" HierarchySupport="Exact" Reconcile="true">      
+        <InclusionAttribute ID="SubscriptionDescription" PropertyPath="$Context/Property[Type='Advania.Subscription']/SubscriptionDescription$" SlowlyChangingAttribute="false"/>
+        <InclusionAttribute ID="SubscriptionStartDate" PropertyPath="$Context/Property[Type='Advania.Subscription']/SubscriptionStartDate$" SlowlyChangingAttribute="false"/>
+        <InclusionAttribute ID="SubscriptionEndDate" PropertyPath="$Context/Property[Type='Advania.Subscription']/SubscriptionEndDate$" SlowlyChangingAttribute="false"/>
+        <InclusionAttribute ID="SubscriptionType" PropertyPath="$Context/Property[Type='Advania.Subscription']/SubscriptionType$" SlowlyChangingAttribute="false"/>
+        <InclusionAttribute ID="SubscriptionActivity" PropertyPath="$Context/Property[Type='Advania.Subscription']/SubscriptionActivity$" SlowlyChangingAttribute="false"/>
+        <InclusionAttribute ID="SubscriptionUnit" PropertyPath="$Context/Property[Type='Advania.Subscription']/SubscriptionUnit$" SlowlyChangingAttribute="false"/>
+        <InclusionAttribute ID="SubscriptionOther" PropertyPath="$Context/Property[Type='Advania.Subscription']/SubscriptionOther$" SlowlyChangingAttribute="false"/>
+      </Dimension>
+    </Dimensions>
+    <Facts>
+      <RelationshipFact ID ="SubscriptionContainsConfigItem" Accessibility="Public" Domain="DWBase!Domain.InstanceManagement" TimeGrain="Daily" SourceType="Advania.Subscription" SourceDimension="SubscriptionDim">
+        <Relationships RelationshipType="Advania.SubscriptionContainsConfigItem" TargetDimension="DWBase!ConfigItemDim" />
+      </RelationshipFact>
+    </Facts>
+  </Warehouse>
+</ManagementPackFragment>

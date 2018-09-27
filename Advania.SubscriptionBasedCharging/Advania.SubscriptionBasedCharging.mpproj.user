@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <DeploymentNextVersion>1.1.0.379</DeploymentNextVersion>
+    <DeploymentServerName>172.17.13.120</DeploymentServerName>
+    <DeploymentCredentials>AskForCredentials</DeploymentCredentials>
+    <DeploymentCookie>5247369162168057904</DeploymentCookie>
+    <DeploymentAutoIncrementVersion>True</DeploymentAutoIncrementVersion>
+    <DeploymentStartAction>DeployOnly</DeploymentStartAction>
+    <DeploymentWebConsoleUrl />
+    <DeploymentCommand />
+    <DeploymentCommandArguments />
+    <DeploymentDependencyMode>ProjectAndDependencies</DeploymentDependencyMode>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,62 @@
+﻿<ManagementPack ContentReadable="true" SchemaVersion="2.0" OriginalSchemaVersion="1.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <Manifest>
+    <Identity>
+      <ID>Advania.CI.FormExtenstions</ID>
+      <Version>1.0.0.0</Version>
+    </Identity>
+    <Name>Advania.CI.FormExtenstions</Name>
+    <References>
+      <Reference Alias="System">
+        <ID>System.Library</ID>
+        <Version>7.5.8501.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="Console">
+        <ID>Microsoft.EnterpriseManagement.ServiceManager.UI.Console</ID>
+        <Version>7.5.3079.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="Alias_1e1b40c6_6136_48b9_bc60_6f6ba1ec9fd8">
+        <ID>Advania_CMDB_OrganizationStructure</ID>
+        <Version>1.0.0.13</Version>
+        <PublicKeyToken>8aa07c39f2fdb944</PublicKeyToken>
+      </Reference>
+    </References>
+  </Manifest>
+  <Categories>
+    <Category ID="Advania.CI.FormExtenstions.Category" Value="Console!Microsoft.EnterpriseManagement.ServiceManager.ManagementPack">
+      <ManagementPackName>Advania.CI.FormExtenstions</ManagementPackName>
+      <ManagementPackVersion>1.0.0.0</ManagementPackVersion>
+    </Category>
+  </Categories>
+  <Presentation>
+    <Forms>
+      <Form ID="CustomForm_1" Accessibility="Public" Target="Alias_1e1b40c6_6136_48b9_bc60_6f6ba1ec9fd8!Organization" Assembly="Litware.SCSM.CustomFormTemplates" TypeName="Litware.SCSM.CustomFormTemplates.CITemplate">
+        <Category>Form</Category>
+      </Form>
+    </Forms>
+  </Presentation>
+  <LanguagePacks>
+    <LanguagePack ID="SVE" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="Advania.CI.FormExtenstions">
+          <Name>Advania.CI.FormExtenstions</Name>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+    <LanguagePack ID="ENU" IsDefault="false">
+      <DisplayStrings>
+        <DisplayString ElementID="Advania.CI.FormExtenstions">
+          <Name>Advania.CI.FormExtenstions</Name>
+        </DisplayString>
+        <DisplayString ElementID="CustomForm_1">
+          <Name>OrganizationForm</Name>
+          <Description>Organization Form</Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+  <Resources>
+    <Assembly ID="Litware.SCSM.CustomFormTemplates" Accessibility="Public" FileName="Litware.SCSM.CustomFormTemplates.dll" HasNullStream="false" QualifiedName="Litware.SCSM.CustomFormTemplates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+  </Resources>
+</ManagementPack>

@@ -1,0 +1,64 @@
+﻿<ManagementPackFragment SchemaVersion="SM2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDefinitions>
+    <EntityTypes>
+      <ClassTypes>
+        <ClassType ID="Advania.Department" Base="SystemLib!System.ConfigItem" Accessibility="Public" Abstract="false" Hosted="false" Singleton="false">
+          <Property ID="DepartmentID" Key="true" Type="string" DefaultValue="Department{0}" AutoIncrement="true"/>
+          <Property ID="DepartmentName" Key="false" Type="string"/>
+          <Property ID="DepartmentDescription" Key="false" Type="string"/>
+          <Property ID="DepartmentCode" Key="false" Type="int"/>         
+        </ClassType>
+      </ClassTypes>
+    </EntityTypes>
+  </TypeDefinitions>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="Advania.Department">
+          <Name>Department</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Department" SubElementID="DepartmentID">
+          <Name>Department ID</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Department" SubElementID="DepartmentName">
+          <Name>Department Name</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Department" SubElementID="DepartmentDescription">
+          <Name>Department Description</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Department" SubElementID="DepartmentCode">
+          <Name>Department Code</Name>
+          <Description></Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+    <LanguagePack ID="SVE" IsDefault="false">
+      <DisplayStrings>
+        <DisplayString ElementID="Advania.Department">
+          <Name>Department</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Department" SubElementID="DepartmentID">
+          <Name>Department ID</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Department" SubElementID="DepartmentName">
+          <Name>Department Name</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Department" SubElementID="DepartmentDescription">
+          <Name>Department Description</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Department" SubElementID="DepartmentCode">
+          <Name>Department Code</Name>
+          <Description></Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>

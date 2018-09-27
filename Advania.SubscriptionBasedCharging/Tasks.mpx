@@ -1,0 +1,62 @@
+﻿<ManagementPackFragment SchemaVersion="SM2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Categories>
+    <Category ID="CompleteDecisionActivity" Target="CompleteDecisionActivityTask" Value="SAL!ServiceManager.ActivityManagement.ManualActivitiesFolderTasks" />
+    <Category ID="Category.1778914619c14f78bdb0fd0fa23b6b3b" Value="EnterpriseManagement!Microsoft.EnterpriseManagement.ServiceManager.ManagementPack">
+      <ManagementPackName>Advania.SubscriptionBasedCharging</ManagementPackName>
+      <ManagementPackVersion>1.0.0.0</ManagementPackVersion>
+      <ManagementPackPublicKeyToken>e66685990c39350a</ManagementPackPublicKeyToken>
+    </Category>
+  </Categories>
+  <Presentation>
+    <ConsoleTasks>
+      <ConsoleTask ID="CompleteDecisionActivityTask" Accessibility="Public" Enabled="true" Target="Advania.DecisionActivity" RequireOutput="false">
+        <Assembly>EnterpriseManagement!SdkDataAccessAssembly</Assembly>
+        <Handler>Microsoft.EnterpriseManagement.UI.SdkDataAccess.ConsoleTaskHandler</Handler>
+        <Parameters>
+          <Argument Name="Assembly">Microsoft.EnterpriseManagement.ServiceManager.ActivityManagement.Presentation</Argument>
+          <Argument Name="Type">Microsoft.EnterpriseManagement.ServiceManager.ActivityManagement.Tasks.ActivityStatusChangeTaskHandler</Argument>
+          <Argument>Complete</Argument>
+        </Parameters>
+      </ConsoleTask>
+      <ConsoleTask ID="CreateDebtFile" Accessibility="Public" Enabled="true" Target="Advania.Subscription" RequireOutput="false">
+        <Assembly>EnterpriseManagement!SdkDataAccessAssembly</Assembly>
+        <Handler>Microsoft.EnterpriseManagement.UI.SdkDataAccess.CommandLineHandler</Handler>
+        <Parameters>
+          <Argument Name="LoggingEnabled">True</Argument>
+          <Argument Name="Application">powershell.exe</Argument>
+          <Argument Name="WorkingDirectory">%windir%\system32</Argument>
+          <Argument Name="">$session = New-PSSession -ComputerName vk-scsm01; Enter-PSSession $session; powershell -NoExit -ExecutionPolicy ByPass -File D:\PSScript\CreateDebtFile3.ps1;</Argument>
+        </Parameters>
+      </ConsoleTask>
+      <ConsoleTask ID="CreateDebtInfoFiles" Accessibility="Public" Enabled="true" Target="Advania.Subscription" RequireOutput="false">
+        <Assembly>EnterpriseManagement!SdkDataAccessAssembly</Assembly>
+        <Handler>Microsoft.EnterpriseManagement.UI.SdkDataAccess.CommandLineHandler</Handler>
+        <Parameters>
+          <Argument Name="LoggingEnabled">True</Argument>
+          <Argument Name="Application">powershell.exe</Argument>
+          <Argument Name="WorkingDirectory">%windir%\system32</Argument>
+          <Argument Name="">powershell -ExecutionPolicy ByPass -File \\VK-SCSM01\PSScript\CreateDebtInfoFiles.ps1</Argument>
+        </Parameters>
+      </ConsoleTask>
+    </ConsoleTasks>
+    <ImageReferences>
+      <ImageReference ElementID="CompleteDecisionActivityTask" ImageID="SAL!ActivityMgmt_MarkActivityAsCompleted_16" />
+      <ImageReference ElementID="CreateDebtFile" ImageID="Charge" />
+      <ImageReference ElementID="CreateDebtInfoFiles" ImageID="Subscription" />
+    </ImageReferences>
+  </Presentation>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="CompleteDecisionActivityTask">
+          <Name>Mark as Completed</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="CreateDebtFile">
+          <Name>Create Debt File</Name>
+          <Description></Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>  
+</ManagementPackFragment>

@@ -1,0 +1,91 @@
+﻿<ManagementPackFragment SchemaVersion="SM2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDefinitions>
+    <EntityTypes>
+      <ClassTypes>
+        <ClassType ID="Advania.ChargeExternal" Base="SystemLib!System.ConfigItem" Accessibility="Public" Abstract="false" Hosted="false" Singleton="false">
+          <Property ID="ChargeExternalID" Key="true" Type="string" DefaultValue="ChargeExternal{0}" AutoIncrement="true"/>
+          <Property ID="ChargeExternalDescription" Key="false" Type="string"/>
+          <Property ID="ChargeExternalChargeDate" Key="false" Type="datetime"/>
+          <Property ID="ChargeExternalEndDate" Key="false" Type="datetime"/>
+          <Property ID="ChargeExternalChargeCost" Key="false" Type="int"/>
+          <Property ID="ChargeExternalChargeCostDec" Key="false" Type="decimal" MaxLength="10" Scale="2" />
+          <Property ID="ChargeExternalExternalRef" Key="false" Type="string"/>
+        </ClassType>
+      </ClassTypes>
+    </EntityTypes>
+  </TypeDefinitions>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="Advania.ChargeExternal">
+          <Name>ChargeExternal Class</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.ChargeExternal" SubElementID="ChargeExternalID">
+          <Name>ChargeExternal ID</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.ChargeExternal" SubElementID="ChargeExternalDescription">
+          <Name>ChargeExternal Description</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.ChargeExternal" SubElementID="ChargeExternalChargeDate">
+          <Name>ChargeExternal Charge Date</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.ChargeExternal" SubElementID="ChargeExternalEndDate">
+          <Name>ChargeExternal End Date</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.ChargeExternal" SubElementID="ChargeExternalChargeCost">
+          <Name>ChargeExternal Charge Cost</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.ChargeExternal" SubElementID="ChargeExternalChargeCostDec">
+          <Name>ChargeExternal Charge Cost Decimal</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.ChargeExternal" SubElementID="ChargeExternalExternalRef">
+            <Name>ChargeExternal External Reference</Name>
+            <Description></Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+    <LanguagePack ID="SVE" IsDefault="false">
+      <DisplayStrings>
+        <DisplayString ElementID="Advania.ChargeExternal">
+          <Name>Extern debitering</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.ChargeExternal" SubElementID="ChargeExternalID">
+          <Name>DebiteringsID</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.ChargeExternal" SubElementID="ChargeExternalDescription">
+          <Name>Beskrivning</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.ChargeExternal" SubElementID="ChargeExternalChargeDate">
+          <Name>Debiteringsdatum</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.ChargeExternal" SubElementID="ChargeExternalEndDate">
+          <Name>Slutdatum</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.ChargeExternal" SubElementID="ChargeExternalChargeCost">
+          <Name>Debiteringskostnad</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.ChargeExternal" SubElementID="ChargeExternalChargeCostDec">
+          <Name>Debiteringskostnad (decimal)</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.ChargeExternal" SubElementID="ChargeExternalExternalRef">
+            <Name>Reference</Name>
+            <Description></Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>

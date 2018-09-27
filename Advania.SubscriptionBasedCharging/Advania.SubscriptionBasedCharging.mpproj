@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProjectGuid>{bf2b4002-b7fd-4e03-b4bb-ac77a72c50bc}</ProjectGuid>
+    <RootNamespace>Advania.SubscriptionBasedCharging</RootNamespace>
+    <Name>Advania.SubscriptionBasedCharging</Name>
+    <ManagementPackName>Advania.SubscriptionBasedCharging</ManagementPackName>
+    <Version>1.1.0.0</Version>
+    <MpFrameworkVersion>v7.0.2</MpFrameworkVersion>
+    <MpFrameworkProfile>SM</MpFrameworkProfile>
+    <ProductVersion>1.1.0.0</ProductVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <GenerateSealed>True</GenerateSealed>
+    <Company>Advania AB</Company>
+    <Copyright>Copyright (c) Advania AB. All rights reserved.</Copyright>
+    <DelaySigning>False</DelaySigning>
+    <AssemblyOriginatorKeyFile>C:\Users\maehr001\OneDrive - Advania\Dokument\Kunder\Vänersborgs kommun\Project\Advania.SubscriptionBasedCharging.Forms\Advania.SubscriptionBasedCharging.Forms\advania.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+    <DelaySigning>false</DelaySigning>
+    <Company>MyCompany</Company>
+    <Copyright>Copyright (c) MyCompany. All rights reserved.</Copyright>
+    <DelaySign>false</DelaySign>
+    <AssemblyOriginatorKeyFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <ManagementPackReference Include="Lumagate.TypeProjections">
+      <HintPath>C:\Users\maehr001\OneDrive - Advania\Dokument\Kunder\Vänersborgs kommun\Project\Advania.SubscriptionBasedCharging\MPReferences\Lumagate.TypeProjections.mp</HintPath>
+      <Alias>LT</Alias>
+      <MinVersion>1.0.0.26</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.EnterpriseManagement.ServiceManager.Authoring.Forms">
+      <HintPath>C:\Users\maehr001\OneDrive - Advania\Dokument\Kunder\Vänersborgs kommun\Project\Advania.SubscriptionBasedCharging\MPReferences\Microsoft.EnterpriseManagement.ServiceManager.Authoring.Forms.mpb</HintPath>
+      <Alias>MESAF</Alias>
+      <MinVersion>7.5.3079.0</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.EnterpriseManagement.ServiceManager.UI.Authoring">
+      <HintPath>C:\Users\maehr001\OneDrive - Advania\SCSM 2016 - References\SCSM 2016\dll and MPB\Microsoft.EnterpriseManagement.ServiceManager.UI.Authoring.mp</HintPath>
+      <Alias>MESUA</Alias>
+      <MinVersion>7.5.7487.0</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.EnterpriseManagement.ServiceManager.UI.Console">
+      <HintPath>C:\Users\maehr001\OneDrive - Advania\Dokument\Kunder\Vänersborgs kommun\Project\Advania.SubscriptionBasedCharging\MPReferences\Microsoft.EnterpriseManagement.ServiceManager.UI.Console.mpb</HintPath>
+      <Alias>EnterpriseManagement</Alias>
+      <MinVersion>7.5.3079.0</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.EnterpriseManagement.ServiceManager.UI.Console.Help">
+      <HintPath>C:\Users\maehr001\OneDrive - Advania\Dokument\Kunder\Vänersborgs kommun\Project\Advania.SubscriptionBasedCharging\MPReferences\Console.mpb</HintPath>
+      <Alias>MESUCH</Alias>
+      <MinVersion>7.5.3079.0</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.SystemCenter.ConfigurationManager">
+      <HintPath>C:\Users\maehr001\OneDrive - Advania\SCSM 2016 - References\SCSM 2016\dll and MPB\Microsoft.SystemCenter.ConfigurationManager.mp</HintPath>
+      <Alias>ConfigurationManager</Alias>
+      <MinVersion>7.5.7487.0</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.SystemCenter.Datawarehouse.Base">
+      <HintPath>C:\Users\maehr001\OneDrive - Advania\SCSM 2016 - References\SCSM 2016\dll and MPB\Microsoft.SystemCenter.Datawarehouse.Base.mp</HintPath>
+      <Alias>DWBase</Alias>
+      <MinVersion>7.5.3079.0</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.Windows.Library">
+      <HintPath>C:\Users\maehr001\OneDrive - Advania\Dokument\Kunder\Vänersborgs kommun\Project\Advania.SubscriptionBasedCharging\MPReferences\Microsoft.Windows.Library.mp</HintPath>
+      <Alias>Windows</Alias>
+      <MinVersion>7.5.8501.0</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.Windows.Peripheral.Library">
+      <HintPath>C:\Users\maehr001\OneDrive - Advania\Dokument\Kunder\Vänersborgs kommun\Project\Advania.SubscriptionBasedCharging\MPReferences\Microsoft.Windows.Peripheral.Library.mp</HintPath>
+      <Alias>Peripherals</Alias>
+      <MinVersion>7.5.3079.0</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="ServiceManager.ActivityManagement.Library">
+      <HintPath>C:\Users\maehr001\OneDrive - Advania\Dokument\Kunder\Vänersborgs kommun\Project\Advania.SubscriptionBasedCharging\MPReferences\ServiceManager.ActivityManagement.Library.mpb</HintPath>
+      <Alias>SAL</Alias>
+      <MinVersion>7.5.3079.0</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="ServiceManager.ConfigurationManagement.Library">
+      <HintPath>C:\Users\maehr001\OneDrive - Advania\SCSM 2016 - References\SCSM 2016\dll and MPB\ServiceManager.ConfigurationManagement.Library.mpb</HintPath>
+      <Alias>SCL</Alias>
+      <MinVersion>7.5.7487.0</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="System.Knowledge.Library">
+      <HintPath>C:\Users\maehr001\OneDrive - Advania\Dokument\Kunder\Vänersborgs kommun\Project\Advania.SubscriptionBasedCharging\Advania.SubscriptionBasedCharging\System.Knowledge.Library.mp</HintPath>
+      <Alias>CoreKnowledge</Alias>
+      <MinVersion>7.5.3079.0</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="System.Library">
+      <HintPath>C:\Users\maehr001\OneDrive - Advania\Dokument\Kunder\Vänersborgs kommun\Project\Advania.SubscriptionBasedCharging\MPReferences\System.Library.mp</HintPath>
+      <Alias>SystemLib</Alias>
+      <MinVersion>7.5.8501.0</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="System.SupportingItem.Library">
+      <HintPath>C:\Users\maehr001\OneDrive - Advania\Dokument\Kunder\Vänersborgs kommun\Project\Advania.SubscriptionBasedCharging\MPReferences\System.SupportingItem.Library.mp</HintPath>
+      <Alias>SupportingItem</Alias>
+      <MinVersion>7.5.3079.0</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="System.WorkItem.Activity.Library">
+      <HintPath>C:\Users\maehr001\Documents\Visual Studio 2012\Projects\Advania.SubscriptionBasedCharging\Advania.SubscriptionBasedCharging\System.WorkItem.Activity.Library.mp</HintPath>
+      <Alias>ActivityLib</Alias>
+      <MinVersion>7.5.3079.0</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="System.WorkItem.Library">
+      <HintPath>C:\Users\maehr001\OneDrive - Advania\Dokument\Kunder\Vänersborgs kommun\Project\Advania.SubscriptionBasedCharging\MPReferences\System.WorkItem.Library.mp</HintPath>
+      <Alias>WorkItem</Alias>
+      <MinVersion>7.5.3079.0</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="System.WorkItem.ServiceRequest.Library">
+      <HintPath>C:\Users\maehr001\OneDrive - Advania\SCSM 2016 - References\SCSM 2016\dll and MPB\System.WorkItem.ServiceRequest.Library.mp</HintPath>
+      <Alias>ServiceRequest</Alias>
+      <MinVersion>7.5.7487.0</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DecisionActivity.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Elitepad.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumTypes.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Forms.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Ipad.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Mobile.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Samsung.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Subscription.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Pricelist.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Charge.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ChargeExternal.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OtherEk.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OrderID.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Department.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Division.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Organization.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SubscriptionDim.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tasks.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Unit.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Relationships.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ManagementPack.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeProjections.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Advania.SubscriptionBasedCharging.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e66685990c39350a">
+      <Name>Advania.SubscriptionBasedCharging.Forms</Name>
+      <AssemblyName>Advania.SubscriptionBasedCharging.Forms.dll</AssemblyName>
+      <HintPath>..\..\Advania.SubscriptionBasedCharging.Forms\Advania.SubscriptionBasedCharging.Forms\bin\Debug\Advania.SubscriptionBasedCharging.Forms.dll</HintPath>
+      <Private>True</Private>
+      <PackageToBundle>True</PackageToBundle>
+    </Reference>
+    <Reference Include="Microsoft.EnterpriseManagement.ServiceManager.Application.Common, Version=7.0.5000.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Name>Microsoft.EnterpriseManagement.ServiceManager.Application.Common</Name>
+      <AssemblyName>Microsoft.EnterpriseManagement.ServiceManager.Application.Common.dll</AssemblyName>
+      <HintPath>..\SDKReferences\Microsoft.EnterpriseManagement.ServiceManager.Application.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.EnterpriseManagement.ServiceManager.Datawarehouse.Common, Version=7.0.5000.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Name>Microsoft.EnterpriseManagement.ServiceManager.Datawarehouse.Common</Name>
+      <AssemblyName>Microsoft.EnterpriseManagement.ServiceManager.Datawarehouse.Common.dll</AssemblyName>
+      <HintPath>..\MPReferences\Microsoft.EnterpriseManagement.ServiceManager.Datawarehouse.Common.dll</HintPath>
+      <Private>True</Private>
+      <PackageToBundle>False</PackageToBundle>
+    </Reference>
+    <Reference Include="Microsoft.EnterpriseManagement.ServiceManager.SharedResources, Version=7.0.5000.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Name>Microsoft.EnterpriseManagement.ServiceManager.SharedResources</Name>
+      <AssemblyName>Microsoft.EnterpriseManagement.ServiceManager.SharedResources.dll</AssemblyName>
+      <HintPath>..\SDKReferences\Microsoft.EnterpriseManagement.ServiceManager.SharedResources.dll</HintPath>
+      <Private>True</Private>
+      <PackageToBundle>False</PackageToBundle>
+    </Reference>
+    <Reference Include="Microsoft.EnterpriseManagement.UI.Controls, Version=7.1.1000.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Name>Microsoft.EnterpriseManagement.UI.Controls</Name>
+      <AssemblyName>Microsoft.EnterpriseManagement.UI.Controls.dll</AssemblyName>
+      <HintPath>..\SDKReferences\Microsoft.EnterpriseManagement.UI.Controls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.EnterpriseManagement.UI.Core, Version=7.0.5000.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Name>Microsoft.EnterpriseManagement.UI.Core</Name>
+      <AssemblyName>Microsoft.EnterpriseManagement.UI.Core.dll</AssemblyName>
+      <HintPath>..\SDKReferences\Microsoft.EnterpriseManagement.UI.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.EnterpriseManagement.UI.Extensions, Version=7.0.5000.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Name>Microsoft.EnterpriseManagement.UI.Extensions</Name>
+      <AssemblyName>Microsoft.EnterpriseManagement.UI.Extensions.dll</AssemblyName>
+      <HintPath>..\SDKReferences\Microsoft.EnterpriseManagement.UI.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.EnterpriseManagement.UI.SdkDataAccess, Version=7.0.5000.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Name>Microsoft.EnterpriseManagement.UI.SdkDataAccess</Name>
+      <AssemblyName>Microsoft.EnterpriseManagement.UI.SdkDataAccess.dll</AssemblyName>
+      <HintPath>..\SDKReferences\Microsoft.EnterpriseManagement.UI.SdkDataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.EnterpriseManagement.UI.SMControls, Version=7.0.5000.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Name>Microsoft.EnterpriseManagement.UI.SMControls</Name>
+      <AssemblyName>Microsoft.EnterpriseManagement.UI.SMControls.dll</AssemblyName>
+      <HintPath>..\SDKReferences\Microsoft.EnterpriseManagement.UI.SMControls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="globe.png">
+      <SubType>Content</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Charge.png">
+      <SubType>Content</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Department.png">
+      <SubType>Content</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Division.png">
+      <SubType>Content</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="order.png">
+      <SubType>Content</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderID.png">
+      <SubType>Content</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Organization.png">
+      <SubType>Content</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrganizationalManagement.png">
+      <SubType>Content</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pricelist.png">
+      <SubType>Content</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Subscription.png">
+      <SubType>Content</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Unit.png">
+      <SubType>Content</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ipad.png">
+      <SubType>Content</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mobile.png">
+      <SubType>Content</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VSAC\Microsoft.SystemCenter.OperationsManager.targets" />
+</Project>

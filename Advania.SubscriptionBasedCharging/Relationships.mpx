@@ -1,0 +1,270 @@
+﻿<ManagementPackFragment SchemaVersion="SM2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDefinitions>
+    <EntityTypes>
+      <RelationshipTypes>
+        <RelationshipType ID="Advania.SubscribedService" Accessibility="Public" Base="SystemLib!System.Reference">
+          <Source ID="IsSubscribedByService" MinCardinality="0" MaxCardinality="2147483647" Type="Advania.Subscription"/>
+          <Target ID="ServiceSubscription" MinCardinality="0" MaxCardinality="1" Type="SystemLib!System.Service"/>
+        </RelationshipType>
+        <RelationshipType ID="Advania.SubscriptionPrice" Accessibility="Public" Base="SystemLib!System.Reference">
+          <Source ID="Subscription" MinCardinality="0" MaxCardinality="1" Type="Advania.Subscription"/>
+          <Target ID="Pricelist" MinCardinality="0" MaxCardinality="1" Type="Advania.Pricelist"/>
+        </RelationshipType>
+        <RelationshipType ID="Advania.SubscriptionOrderID" Accessibility="Public" Base="SystemLib!System.Reference">
+          <Source ID="Subscription" MinCardinality="0" MaxCardinality="2147483647" Type="Advania.Subscription"/>
+          <Target ID="OrderID" MinCardinality="0" MaxCardinality="1" Type="Advania.OrderID"/>
+        </RelationshipType>
+        <RelationshipType ID="Advania.OrganizationContainsOrderID" Accessibility="Public" Abstract="false" Base="SystemLib!System.Reference">
+          <!-- 160810 -Source ID="Organization" MinCardinality="0" MaxCardinality="2147483647" Type="Advania.Organization"/-->
+          <Source ID="Organization" MinCardinality="0" MaxCardinality="1" Type="Advania.Organization"/>
+          <Target ID="OrderID" MinCardinality="0" MaxCardinality="2147483647" Type="Advania.OrderID"/>
+        </RelationshipType>
+        <RelationshipType ID="Advania.SubscribedByOrganization" Accessibility="Public" Abstract="false" Base="SystemLib!System.Reference">
+          <Source ID="Subscription" MinCardinality="0" MaxCardinality="2147483647" Type="Advania.Subscription"/> <!--ÄNDRAD 160523-->
+          <!--Source ID="Subscription" MinCardinality="0" MaxCardinality="1" Type="Advania.Subscription"/ ÄNDRAD 160620--> 
+          <!--Target ID="Organization" MinCardinality="0" MaxCardinality="2147483647" Type="Advania.Organization" ÄNDRAD 160523/-->
+          <Target ID="Organization" MinCardinality="0" MaxCardinality="1" Type="Advania.Organization"/>
+        </RelationshipType>
+        <RelationshipType ID="Advania.SubscribedByDepartment" Accessibility="Public" Abstract="false" Base="SystemLib!System.Reference">
+          <Source ID="Subscription" MinCardinality="0" MaxCardinality="2147483647" Type="Advania.Subscription"/> <!--ÄNDRAD 160523-->
+          <!--Source ID="Subscription" MinCardinality="0" MaxCardinality="1" Type="Advania.Subscription"/ ÄNDRAD 160620-->
+          <!--Target ID="Department" MinCardinality="0" MaxCardinality="2147483647" Type="Advania.Department"/ ÄNDRAD 160523-->
+          <Target ID="Department" MinCardinality="0" MaxCardinality="1" Type="Advania.Department"/>
+        </RelationshipType>
+        <RelationshipType ID="Advania.SubscriptionsForDepartment" Accessibility="Public" Abstract="false" Base="SystemLib!System.Reference">
+          <Source ID="Department" MinCardinality="0" MaxCardinality="2147483647" Type="Advania.Department"/>
+          <Target ID="Subscription" MinCardinality="0" MaxCardinality="2147483647" Type="Advania.Subscription"/>
+        </RelationshipType>
+          
+        <RelationshipType ID="Advania.SubscribedByDivision" Accessibility="Public" Base="SystemLib!System.Reference">
+          <Source ID="Subscription" MinCardinality="0" MaxCardinality="2147483647" Type="Advania.Subscription"/>
+          <Target ID="Division" MinCardinality="0" MaxCardinality="1" Type="Advania.Division"/>
+        </RelationshipType>
+        <RelationshipType ID="Advania.SubscribedByUnit" Accessibility="Public" Base="SystemLib!System.Reference">
+          <Source ID="Subscription" MinCardinality="0" MaxCardinality="2147483647" Type="Advania.Subscription"/>
+          <Target ID="Unit" MinCardinality="0" MaxCardinality="1" Type="Advania.Unit"/>
+        </RelationshipType>
+        <RelationshipType ID="Advania.SubscribedByOtherEk" Accessibility="Public" Base="SystemLib!System.Reference">
+          <Source ID="Subscription" MinCardinality="0" MaxCardinality="2147483647" Type="Advania.Subscription"/>
+          <Target ID="OtherEk" MinCardinality="0" MaxCardinality="1" Type="Advania.OtherEk"/>
+        </RelationshipType>
+        <RelationshipType ID="Advania.SubscriptionContainsConfigItem" Accessibility="Public" Abstract="false" Base="SystemLib!System.Reference">
+          <Source ID="Subscription" MinCardinality="0" MaxCardinality="2147483647" Type="Advania.Subscription"/>
+          <Target ID="ConfigItem" MinCardinality="0" MaxCardinality="2147483647" Type="SystemLib!System.ConfigItem"/>
+        </RelationshipType>
+        <!--Added 160212-->
+        <RelationshipType ID="Advania.ConfigItemBelongsToSubscription" Accessibility="Public" Abstract="false" Base="SystemLib!System.Reference">
+          <Source ID="ConfigItem" MinCardinality="0" MaxCardinality="2147483647" Type="SystemLib!System.ConfigItem"/>
+          <Target ID="Subscription" MinCardinality="0" MaxCardinality="2147483647" Type="Advania.Subscription"/>
+        </RelationshipType>
+        <!--End add-->
+        <RelationshipType ID="Advania.ChargedSubscription" Accessibility="Public" Base="SystemLib!System.Reference">
+          <Source ID="Charge" MinCardinality="0" MaxCardinality="2147483647" Type="Advania.Charge"/>
+          <Target ID="Subscription" MinCardinality="0" MaxCardinality="1" Type="Advania.Subscription"/>
+        </RelationshipType>
+        <RelationshipType ID="Advania.DepartmentBelongsToOrganization" Accessibility="Public" Abstract="false" Base="SystemLib!System.Reference">
+          <Source ID="Department" MinCardinality="0" MaxCardinality="2147483647" Type="Advania.Department"/>
+          <Target ID="Organization" MinCardinality="0" MaxCardinality="1" Type="Advania.Organization"/>
+        </RelationshipType>
+        <RelationshipType ID="Advania.OrganizationContainsDepartment" Accessibility="Public" Abstract="false" Base="SystemLib!System.Reference">
+          <Source ID="Organization" MinCardinality="0" MaxCardinality="2147483647" Type="Advania.Organization"/>
+          <Target ID="Department" MinCardinality="0" MaxCardinality="2147483647" Type="Advania.Department"/>
+        </RelationshipType>
+        <RelationshipType ID="Advania.DepartmentContainsDivision" Accessibility="Public" Base="SystemLib!System.Reference">
+          <Source ID="Department" MinCardinality="0" MaxCardinality="1" Type="Advania.Department"/>
+          <Target ID="Division" MinCardinality="0" MaxCardinality="2147483647" Type="Advania.Division"/>
+        </RelationshipType>
+        <RelationshipType ID="Advania.DivisionBelongsToDepartment" Accessibility="Public" Base="SystemLib!System.Reference">
+          <Source ID="Division" MinCardinality="0" MaxCardinality="1" Type="Advania.Division"/>
+          <Target ID="Department" MinCardinality="0" MaxCardinality="2147483647" Type="Advania.Department"/>
+        </RelationshipType>
+        <RelationshipType ID="Advania.DivisionContainsUnit" Accessibility="Public" Base="SystemLib!System.Reference">
+          <Source ID="Division" MinCardinality="0" MaxCardinality="1" Type="Advania.Division"/>
+          <Target ID="Unit" MinCardinality="0" MaxCardinality="2147483647" Type="Advania.Unit"/>
+        </RelationshipType>
+        <RelationshipType ID="Advania.UnitBelongsToDivision" Accessibility="Public" Base="SystemLib!System.Reference">
+          <Source ID="Unit" MinCardinality="0" MaxCardinality="1" Type="Advania.Unit"/>
+          <Target ID="Division" MinCardinality="0" MaxCardinality="2147483647" Type="Advania.Division"/>
+        </RelationshipType>
+        <RelationshipType ID="Advania.UnitContainsOtherEk" Accessibility="Public" Base="SystemLib!System.Reference">
+          <Source ID="Unit" MinCardinality="0" MaxCardinality="1" Type="Advania.Unit"/>
+          <Target ID="OtherEk" MinCardinality="0" MaxCardinality="2147483647" Type="Advania.OtherEk"/>
+        </RelationshipType>
+        <RelationshipType ID="Advania.OtherEkBelongsToUnit" Accessibility="Public" Base="SystemLib!System.Reference">
+          <Source ID="OtherEk" MinCardinality="0" MaxCardinality="1" Type="Advania.OtherEk"/>
+          <Target ID="Unit" MinCardinality="0" MaxCardinality="2147483647" Type="Advania.Unit"/>
+        </RelationshipType>
+        <RelationshipType ID="Advania.OrderIDAuthorizedOrderer" Accessibility="Public" Abstract="false" Base="SystemLib!System.Reference">
+          <Source ID="OrderID" MinCardinality="0" MaxCardinality="1" Type="Advania.OrderID"/>
+          <Target ID="User" MinCardinality="0" MaxCardinality="1" Type="SystemLib!System.User"/>
+        </RelationshipType>
+        <RelationshipType ID="Advania.ChargedExternal" Accessibility="Public" Base="SystemLib!System.Reference">
+          <Source ID="External" MinCardinality="0" MaxCardinality="2147483647" Type="Advania.ChargeExternal"/>
+          <Target ID="ConfigItem" MinCardinality="0" MaxCardinality="2147483647" Type="SystemLib!System.ConfigItem"/>
+        </RelationshipType>
+        <RelationshipType ID="Advania.ChargedExternalOrderID" Accessibility="Public" Base="SystemLib!System.Reference">
+          <Source ID="External" MinCardinality="0" MaxCardinality="1" Type="Advania.ChargeExternal"/>
+          <Target ID="OrderID" MinCardinality="0" MaxCardinality="2147483647" Type="Advania.OrderID"/>
+        </RelationshipType>
+        <RelationshipType ID="Advania.SupportDecisionPricelist" Accessibility="Public" Abstract="false" Base="SystemLib!System.Reference">
+          <Source ID="DecisionActivity" MinCardinality="0" MaxCardinality="1" Type="ActivityLib!System.WorkItem.Activity"/>
+          <Target ID="Pricelist" MinCardinality="0" MaxCardinality="1" Type="Advania.Pricelist"/>
+        </RelationshipType>
+      </RelationshipTypes>
+    </EntityTypes>
+  </TypeDefinitions>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="Advania.SubscribedService">
+          <Name>Subscribed Service</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.SubscriptionPrice">
+          <Name>Subscription Pricelist</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.SubscriptionOrderID">
+          <Name>Subscription OrderID</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.SubscribedByOrganization">
+          <Name>Subscribed By Organization</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.SubscribedByDepartment">
+          <Name>Subscribed By Department</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.SubscribedByDivision">
+          <Name>Subscribed By Division</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.SubscribedByUnit">
+          <Name>Subscribed By Unit</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.SubscribedByOtherEk">
+          <Name>Subscribed By OtherEk</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.SubscriptionContainsConfigItem">
+          <Name>Subscription Contains Configuration Item</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.ChargedSubscription">
+          <Name>Charged Subscriptions</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.OrganizationContainsDepartment">
+          <Name>Organization Contains Department</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.DepartmentContainsDivision">
+          <Name>Department Contains Division</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.DivisionContainsUnit">
+          <Name>Division Contains Unit</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.UnitContainsOtherEk">
+          <Name>Unit Contains OtherEk</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.OrganizationContainsOrderID">
+          <Name>Organization Contains OrderID</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.OrderIDAuthorizedOrderer">
+          <Name>OrderID Relates to User</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.ChargedExternal">
+          <Name>Charged External</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.ChargedExternalOrderID">
+          <Name>Charged External OrderID</Name>
+          <Description></Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+    <LanguagePack ID="SVE" IsDefault="false">
+      <DisplayStrings>
+        <DisplayString ElementID="Advania.SubscribedService">
+          <Name>Prenumeration tjänst</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.SubscriptionPrice">
+          <Name>Prenumeration prislista</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.SubscriptionOrderID">
+          <Name>Prenumeration beställarID</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.SubscribedByOrganization">
+          <Name>Prenumeration ansvar</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.SubscribedByDepartment">
+          <Name>Prenumeration verksamhet</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.SubscribedByDivision">
+          <Name>Prenumeration division</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.SubscribedByUnit">
+          <Name>Prenumeration enhet</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.SubscribedByOtherEk">
+          <Name>Prenumeration övrig ek</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.SubscriptionContainsConfigItem">
+          <Name>Prenumeration konfigurationsobjekt</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.ChargedSubscription">
+          <Name>Debitering prenumeration</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.OrganizationContainsDepartment">
+          <Name>Ansvar verksamhet</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.DepartmentContainsDivision">
+          <Name>Verksamhet division</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.DivisionContainsUnit">
+          <Name>Division enhet</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.UnitContainsOtherEk">
+          <Name>Enhet övrig ek</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.OrganizationContainsOrderID">
+          <Name>Ansvar beställarID</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.OrderIDAuthorizedOrderer">
+          <Name>BeställarID användare</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.ChargedExternal">
+          <Name>Extern debitering konfigurationsobjekt</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.ChargedExternalOrderID">
+          <Name>Extern debitering beställarID</Name>
+          <Description></Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>  
+</LanguagePacks>
+</ManagementPackFragment>

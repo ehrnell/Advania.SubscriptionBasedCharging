@@ -1,0 +1,100 @@
+﻿<ManagementPackFragment SchemaVersion="SM2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDefinitions>
+    <EntityTypes>
+      <ClassTypes>
+        <ClassType ID="Advania.Subscription" Base="SystemLib!System.ConfigItem" Accessibility="Public" Abstract="false" Hosted="false" Singleton="false">
+          <Property ID="SubscriptionID" Key="true" Type="string" DefaultValue="Subscription{0}" AutoIncrement="true"/>
+          <Property ID="SubscriptionStartDate" Key="false" Type="datetime"/>
+          <Property ID="SubscriptionEndDate" Key="false" Type="datetime"/>
+          <Property ID="SubscriptionType" Key="false" Type="enum" EnumType="Advania.CI.Enum.Subscription.Type"/>
+          <Property ID="SubscriptionDescription" Key="false" Type="string"/>
+          <Property ID="SubscriptionActivity" Key="false" Type="string"/>
+          <Property ID="SubscriptionUnit" Key="false" Type="string"/>
+          <Property ID="SubscriptionOther" Key="false" Type="string"/>
+        </ClassType>
+      </ClassTypes>
+    </EntityTypes>
+  </TypeDefinitions>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="Advania.Subscription">
+          <Name>Subscription</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Subscription" SubElementID="SubscriptionID">
+          <Name>Subscription ID</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Subscription" SubElementID="SubscriptionStartDate">
+          <Name>Start Date</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Subscription" SubElementID="SubscriptionEndDate">
+          <Name>End Date</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Subscription" SubElementID="SubscriptionType">
+          <Name>Type</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Subscription" SubElementID="SubscriptionDescription">
+          <Name>Description</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Subscription" SubElementID="SubscriptionActivity">
+          <Name>Activity</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Subscription" SubElementID="SubscriptionUnit">
+          <Name>Unit</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Subscription" SubElementID="SubscriptionOther">
+          <Name>Other</Name>
+          <Description></Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+    <LanguagePack ID="SVE" IsDefault="false">
+      <DisplayStrings>
+        <DisplayString ElementID="Advania.Subscription">
+          <Name>Prenumeration</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Subscription" SubElementID="SubscriptionID">
+          <Name>PrenumerationsID</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Subscription" SubElementID="SubscriptionStartDate">
+          <Name>Startdatum</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Subscription" SubElementID="SubscriptionEndDate">
+          <Name>Slutdatum</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Subscription" SubElementID="SubscriptionType">
+          <Name>Typ</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Subscription" SubElementID="SubscriptionDescription">
+          <Name>Beskrivning</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Subscription" SubElementID="SubscriptionActivity">
+          <Name>Aktivitet</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Subscription" SubElementID="SubscriptionUnit">
+          <Name>Enhet</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Advania.Subscription" SubElementID="SubscriptionOther">
+          <Name>Övrigt</Name>
+          <Description></Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>
